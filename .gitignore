@@ -1,0 +1,8 @@
+# Ignore dev-related folders
+.vscode
+
+# Ignore sensitive credentials
+credentials.toml
+
+# Ignore virtual env
+venv
