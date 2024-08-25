@@ -4,5 +4,11 @@
 # Ignore sensitive credentials
 credentials.toml
 
+# Ignore user-specific config
+config.toml
+
 # Ignore virtual env
 venv
+
+# Ignore logs
+logs/
