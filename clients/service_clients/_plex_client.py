@@ -61,6 +61,20 @@ class PlexClient:
             self.logger.error(f"Error downloading cover for album '{album.title}': {str(e)}")
             raise
 
+    def download_artist_image(self, artist, save_path):
+        """Download artist image to the specified path."""
+        try:
+            if artist.thumb:
+                with open(save_path, 'wb') as f:
+                    f.write(artist.thumb.download())
+                return True
+            else:
+                self.logger.warning(f"No thumb available for artist: {artist.title}")
+                return False
+        except Exception as e:
+            self.logger.error(f"Error downloading image for artist '{artist.title}': {str(e)}")
+            return False
+
     def get_artist_albums(self, artist):
         """Get all albums for an artist."""
         try:
